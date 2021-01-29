@@ -32,13 +32,18 @@ class ProjectChangedObserver
     {
         GameObject[] gameObjects = GameObject.FindObjectsOfType<GameObject>();
 
-        for(int i = 0; i<gameObjects.Length;i++)
+        for (int i = 0; i < gameObjects.Length; i++)
         {
             TaggedObject tobj = gameObjects[i].GetComponent<TaggedObject>();
 
-            if(tobj == null)
+            if (tobj == null)
             {
-                gameObjects[i].AddComponent<TaggedObject>();
+                tobj = gameObjects[i].AddComponent<TaggedObject>();
+            }
+
+            if ((!string.IsNullOrEmpty(tobj.tag) || tobj.tag != "Untagged") && !tobj.Tags.Contains(tobj.tag))
+            {
+                tobj.Tags.Add(tobj.tag);
             }
         }
 
