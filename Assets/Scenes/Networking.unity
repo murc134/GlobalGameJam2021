@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 1156301449}
   - component: {fileID: 1156301448}
   - component: {fileID: 1156301447}
+  - component: {fileID: 1156301450}
   m_Layer: 0
   m_Name: Networking
   m_TagString: Untagged
@@ -424,7 +425,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156301445}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
   m_Name: 
@@ -485,10 +486,23 @@ MonoBehaviour:
   batchSend: 1
   waitBeforeSend: 0
   clientUseWss: 0
-  sslEnabled: 0
+  sslEnabled: 1
   sslCertJson: ./cert.json
   sslProtocols: 3072
   _logLevels: 0
+--- !u!114 &1156301450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156301445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b8fcf0649bbb04f9e4563028ed3025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serverAddress: binary.games
 --- !u!1 &1358870928
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +557,6 @@ GameObject:
   - component: {fileID: 1687258585}
   - component: {fileID: 1687258584}
   - component: {fileID: 1687258582}
-  - component: {fileID: 1687258583}
   - component: {fileID: 1687258586}
   m_Layer: 0
   m_Name: Main Camera
@@ -560,18 +573,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_Enabled: 1
---- !u!114 &1687258583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687258581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -622,8 +623,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: -0.15031756, y: 0.8299689, z: -0.26797768, w: -0.46555787}
-  m_LocalPosition: {x: 22.190092, y: 12.283293, z: 9.902944}
+  m_LocalRotation: {x: 0.049458466, y: 0.95028913, z: -0.20584066, w: 0.2283292}
+  m_LocalPosition: {x: -7.4876757, y: 8.405273, z: 13.597464}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

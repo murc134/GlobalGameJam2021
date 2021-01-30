@@ -1,0 +1,17 @@
+diff a/Assets/ProjectAssets/TaurusDungeonGenerator/Example/Scenes/ExampleScene.unity b/Assets/ProjectAssets/TaurusDungeonGenerator/Example/Scenes/ExampleScene.unity	(rejected hunks)
+@@ -1702,13 +1702,12 @@
+   m_fontColorGradientPreset: {fileID: 0}
+   m_spriteAsset: {fileID: 0}
+   m_tintAllSprites: 0
++  m_StyleSheet: {fileID: 0}
++  m_TextStyleHashCode: -1183493901
+   m_overrideHtmlColors: 0
+   m_faceColor:
+     serializedVersion: 2
+     rgba: 4294967295
+-  m_outlineColor:
+-    serializedVersion: 2
+-    rgba: 4278190080
+   m_fontSize: 18
+   m_fontSizeBase: 18
+   m_fontWeight: 400
