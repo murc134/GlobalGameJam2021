@@ -69,7 +69,7 @@ namespace SnowFlakeGamesAssets.TaurusDungeonGenerator.Structure
             return instantiatedRoom;
         }
 
-        private static void CreateOpenReplacement(RoomConnector conn)
+        public static void CreateOpenReplacement(RoomConnector conn)
         {
             RemoveOriginalChildrenIfNeeded(conn);
 
@@ -94,7 +94,7 @@ namespace SnowFlakeGamesAssets.TaurusDungeonGenerator.Structure
             }
         }
 
-        private static void CreateClosedReplacement(RoomConnector conn)
+        public static void CreateClosedReplacement(RoomConnector conn)
         {
             RemoveOriginalChildrenIfNeeded(conn);
             

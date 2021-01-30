@@ -1,5 +1,6 @@
 ﻿using SnowFlakeGamesAssets.TaurusDungeonGenerator.Structure;
 using SnowFlakeGamesAssets.TaurusDungeonGenerator.Utils;
+using SnowFlakeGamesAssets.TaurusDungeonGenerator.Component;
 using System;
 using System.Collections.Generic;
 using TaurusDungeonGenerator.Example.Scripts;
@@ -8,9 +9,12 @@ using UnityEngine;
 public class DungeonToyJourneyRoot : DungeonDemoRoot
 {
     public List<GameObject> Player;
-	public List<GameObject> Keys;
+	public GameObject KeyPrefap;
+
+	public DungeonNode EndgameRoom;
 
 	public GameObject EndGameCollaiderObj;
+	public GameObject LookedDoorPrefap;
 	/// <summary>
 	/// Keys in DungeonDemoRootstructur.cs gut erklärt
 	/// </summary>
@@ -18,42 +22,74 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 
 	new void Start()
     {
-		OnDungeonRebuilt += TryUnderstandCode_OnDungeonRebuilt;
+		//OnDungeonRebuilt += TryUnderstandCode_OnDungeonRebuilt;
 		OnDungeonRebuilt += SpownPlayer;
-		OnDungeonRebuilt += SpownKeys;
-
 		base.Start();
+
+		CreatEndgamePoint();
+		SpownKeys();
 
 	}
 
-	private void SpownKeys(DungeonStructure obj)
+	private void CreatEndgamePoint()
 	{
-		if (Keys == null || Keys.Count == 0)
+		Instantiate(EndGameCollaiderObj, EndgameRoom.Room.transform.position, Quaternion.identity);
+
+		foreach (var item in EndgameRoom.Room.GetConnections())
+		{
+			// Verschliest die offene Türe zum ende mit einem Key
+			if(item.State == RoomConnector.ConnectionState.CONNECTED)
+			{
+				var door = Instantiate(LookedDoorPrefap, item.transform.position, item.transform.rotation, EndgameRoom.Room.transform);
+				door.AddComponent<DoorKeyCode>().KeyDoorName = "endkey";
+				item.closedPrefab = door;
+				PrototypeDungeon.CreateClosedReplacement(item);
+			}
+		}
+	}
+
+	private void SpownKeys()
+	{
+		if (KeyPrefap == null )
 			return;
 
-		foreach (var item in TreeExtensions.TraverseDepthFirst(obj.StartElement))
+		foreach (var item in TreeExtensions.TraverseDepthFirstReverse(EndgameRoom))
 		{
-			Instantiate(Keys[0], item.Room.transform.position, Quaternion.identity);
+			if(item.Style == "DungeonGenerationTest/BigRoom")
+			{
+				Instantiate(KeyPrefap, item.Room.transform.position, Quaternion.identity);
+			}
 		}
 	}
 
 	private void SpownPlayer(DungeonStructure obj)
 	{
-		// Main Pos
-		Instantiate(Player[0], obj.StartElement.Room.transform.position, Quaternion.identity);
-
+		// Main 0.0.0. Position
+		//Instantiate(Player[0], obj.StartElement.Room.transform.position, Quaternion.identity);
+		EndgameRoom = obj.StartElement;
 		// Bei Multiplayer mehr Spown Plätze
-		foreach (var item in TreeExtensions.TraverseDepthFirst(obj.StartElement))
+		foreach (var item in TreeExtensions.TraverseDepthFirstReverse(obj.StartElement))
 		{
 			//Styls:
 			//DungeonGenerationTest/CorrX
 			//DungeonGenerationTest/BigRoom
 			//DungeonGenerationTest/CorridorsNormalBig
 			//DungeonGenerationTest/MiddleRoom
-			print(item.Style);
+			// print(item.Style);
 
 			if(item.Style == "DungeonGenerationTest/EndRoom")
-			Instantiate(Player[0], item.Room.transform.position, Quaternion.identity);
+			{
+				if (EndgameRoom == item)
+				{
+					continue;
+				}
+				if(item.Room.transform.position == Vector3.zero)
+				{
+
+				}
+
+				Instantiate(Player[0], item.Room.transform.position, Quaternion.identity);
+			}
 		}
 	}
 
