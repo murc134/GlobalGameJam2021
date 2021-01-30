@@ -7,7 +7,7 @@ namespace TaurusDungeonGenerator.Example.Scripts
 {
     public partial class DungeonDemoRoot
     {
-        private Dictionary<string, AbstractDungeonStructure> _dungeonStructures = new Dictionary<string, AbstractDungeonStructure>();
+        protected Dictionary<string, AbstractDungeonStructure> _dungeonStructures = new Dictionary<string, AbstractDungeonStructure>();
 
         private static Dictionary<string, AbstractDungeonStructure> CreateInlineDungeonStructures()
         {

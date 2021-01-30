@@ -32,7 +32,7 @@ namespace TaurusDungeonGenerator.Example.Scripts
 
         public event Action<DungeonStructure> OnDungeonRebuilt;
 
-        void Start()
+        public void Start()
         {
             structureDropdown.ClearOptions();
             _dungeonStructures = LoadStructure();
