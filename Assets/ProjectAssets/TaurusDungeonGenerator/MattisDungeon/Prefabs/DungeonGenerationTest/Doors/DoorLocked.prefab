@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsOpen: 0
   Door: {fileID: 9207932089875251233}
+  DoorOpeningDuration: 2.5
 --- !u!136 &7797946044614473783
 CapsuleCollider:
   m_ObjectHideFlags: 0
