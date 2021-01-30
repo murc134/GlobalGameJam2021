@@ -431,6 +431,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway
       objectReference: {fileID: 0}
+    - target: {fileID: 9077926073120308842, guid: 0ac01095234e1794b86de8b44f804194,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e5f4b47e8ec9324c97022c777a85a65, type: 2}
+    - target: {fileID: 9077926073120308842, guid: 0ac01095234e1794b86de8b44f804194,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 444e0637b0616794fbcd7d1898137dfe, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ac01095234e1794b86de8b44f804194, type: 3}
 --- !u!4 &2282472885869149471 stripped

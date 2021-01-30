@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: MiddleRoom
   m_EditorClassIdentifier: 
   rooms:
+  - {fileID: 7325990119601015707, guid: 3fad1bc488df7b5429b370e2c2227830, type: 3}
   - {fileID: 6294903950994076067, guid: 9f44e64fa06b6e1499c592970d417582, type: 3}
