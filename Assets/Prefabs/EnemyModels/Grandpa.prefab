@@ -44,6 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169200d19a26cb14c948e6d2d54764d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Debugging: 0
+  walkSpeed: 1
+  runSpeed: 4
+  isRunning: 0
+  destinationTransform: {fileID: 0}
+  agent: {fileID: 3382482695201835080}
+  animator: {fileID: 168298922}
+  rightHand: {fileID: 1870811925281416681}
 --- !u!195 &3382482695201835080
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -54,10 +62,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 1
+  m_Acceleration: 4
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 200
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -138,6 +146,12 @@ PrefabInstance:
 --- !u!1 &99058288143874836 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 55645e556cc6d984f897799edb069ab8,
+    type: 3}
+  m_PrefabInstance: {fileID: 981368197549819461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1870811925281416681 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1470689872735118252, guid: 55645e556cc6d984f897799edb069ab8,
     type: 3}
   m_PrefabInstance: {fileID: 981368197549819461}
   m_PrefabAsset: {fileID: 0}
