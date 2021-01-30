@@ -946,7 +946,7 @@ Transform:
   m_GameObject: {fileID: 6995306878168335921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.2026644, y: -1.7113365, z: -9.839384}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4084596113308531964}
   - {fileID: 6767014758677704659}
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 6995306878864486220}
   turnSmoothing: 0.06
-  sprintFOV: 100
+  sprintFOV: 70
   sprintButton: Sprint
 --- !u!114 &6995306879913179969
 MonoBehaviour:
@@ -1033,11 +1033,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 0.11
   runSpeed: 0.7
-  sprintSpeed: 2
-  speedDampTime: 0.1
+  sprintSpeed: 0.7
+  speedDampTime: 0.3
   jumpButton: Jump
-  jumpHeight: 1.5
-  jumpIntertialForce: 10
+  jumpHeight: 0.3
+  jumpIntertialForce: 5
 --- !u!114 &6995306879913179968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,8 +1054,8 @@ MonoBehaviour:
   shoulderButton: Aim Shoulder
   crosshair: {fileID: 2800000, guid: 145fa8a1dfcf6c3459f8df4ac782dba2, type: 3}
   aimTurnSmoothing: 0.25
-  aimPivotOffset: {x: 0.5, y: 1.2, z: 0}
-  aimCamOffset: {x: 0, y: 0.4, z: -0.7}
+  aimPivotOffset: {x: 0, y: 0.25, z: 0}
+  aimCamOffset: {x: 0, y: 0, z: 0.25}
 --- !u!114 &6995306879913179971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,8 +1069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flyButton: Fly
-  flySpeed: 4
-  sprintFactor: 2
+  flySpeed: 0.7
+  sprintFactor: 0.2
   flyMaxVerticalAngle: 60
 --- !u!1 &6995306878864486209
 GameObject:
@@ -1085,6 +1085,7 @@ GameObject:
   - component: {fileID: 6995306878864486211}
   - component: {fileID: 6995306878864486208}
   - component: {fileID: 6995306878864486223}
+  - component: {fileID: 1130642894}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1178,15 +1179,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6995306878168570385}
-  pivotOffset: {x: 0, y: 1.7, z: 0}
-  camOffset: {x: 0, y: 0, z: -3}
+  pivotOffset: {x: 0, y: 0.17, z: 0}
+  camOffset: {x: 0, y: 0, z: -1}
   smooth: 10
   horizontalAimingSpeed: 6
   verticalAimingSpeed: 6
-  maxVerticalAngle: 60
-  minVerticalAngle: -60
+  maxVerticalAngle: -1
+  minVerticalAngle: -65
   XAxis: Analog X
   YAxis: Analog Y
+--- !u!114 &1130642894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6995306878864486209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &7052914574864043118
 GameObject:
   m_ObjectHideFlags: 0

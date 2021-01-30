@@ -6,12 +6,14 @@ using DG.Tweening;
 
 public class DoorKeyControl : MonoBehaviour
 {
+    public static bool PlayerGotEndkey;
+
     public bool IsOpen;
     public Renderer Door;
+    public float DoorOpeningDuration;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -21,13 +23,15 @@ public class DoorKeyControl : MonoBehaviour
     }
 	private void OnTriggerEnter(Collider other)
 	{
-        if (other.tag == "Player" && !IsOpen)
+        if (other.tag == "Player" && !IsOpen && PlayerGotEndkey)
             OpenDoor();
+        else
+            print("wrong Player or key");
 	}
 
 	private void OpenDoor()
 	{
         IsOpen = true;
-        Door.transform.DOMoveY(Door.transform.position.y + Door.bounds.size.y, 1);
+        Door.transform.DORotate(new Vector3(0f, 100f, 0f), DoorOpeningDuration);
 	}
 }
