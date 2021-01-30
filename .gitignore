@@ -58,3 +58,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Houdini Engine
+[Aa]ssets/HoudiniEngineAssetCache/Working
+[Aa]ssets/HoudiniEngineAssetCache/Working.meta
+heu_session.txt
+heu_settings.ini
+
