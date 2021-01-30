@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOpen: 0
-  Door: {fileID: 0}
+  Door: {fileID: 3171824261505281052}
 --- !u!136 &7797946044614473783
 CapsuleCollider:
   m_ObjectHideFlags: 0

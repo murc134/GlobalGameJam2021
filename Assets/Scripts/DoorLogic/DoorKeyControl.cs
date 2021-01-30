@@ -21,7 +21,7 @@ public class DoorKeyControl : MonoBehaviour
     }
 	private void OnTriggerEnter(Collider other)
 	{
-        if (other.tag == "player" && !IsOpen)
+        if (other.tag == "Player" && !IsOpen)
             OpenDoor();
 	}
 
