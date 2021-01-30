@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6742109029051212578}
   - component: {fileID: 6742109029051212579}
   - component: {fileID: 6742109029051212580}
+  - component: {fileID: 1078149209}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -165,6 +166,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navagent: {fileID: 6742109029051212578}
+--- !u!114 &1078149209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9507279839304410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc1d9d4aaaa6ad48ac2f9454e8ddad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  lookAtTransform: {fileID: 7363121022748881402}
 --- !u!1 &5445758601854469293
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +192,7 @@ GameObject:
   - component: {fileID: 3770580628833096721}
   - component: {fileID: 7565907026215794205}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
