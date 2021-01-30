@@ -4,11 +4,14 @@ using UnityEngine;
 
 public delegate void ClickEvent(PointerInfo info);
 
-public class CameraMousePointer : MonoBehaviour
+public class MouseInputController : MonoBehaviour
 {
     private Camera Camera { get => Camera.main; }
     private RaycastHit hit;
-    public LayerMask targetLayers;
+
+    [SerializeField]
+    private LayerMask targetLayers;
+
     public float distance = 1000;
 
     public static Vector3 INVALIDINPUT { get { return Vector3.one * float.MinValue; } }
@@ -18,13 +21,14 @@ public class CameraMousePointer : MonoBehaviour
     public ClickEvent OnMouseClick1, OnMouseClick2, OnMouseUp, OnMouseDown, OnMouseHold, OnMouseHover;
 
     public PointerInfo ClickDownObject = null;
-    public Vector3 ClickDownPosition = INVALIDINPUT;
+    private Vector3 ClickDownPosition = INVALIDINPUT;
 
     public PointerInfo LastClickObject = null;
-    public Vector3 LastClickPosition = INVALIDINPUT;
+    private Vector3 LastClickPosition = INVALIDINPUT;
 
     public float MaxDblClickTime = 0.5f;
-    public float LastClickedTime = 0;
+
+    private float LastClickedTime = 0;
 
     private bool point(Vector3 realmousepos, out PointerInfo info)
     {

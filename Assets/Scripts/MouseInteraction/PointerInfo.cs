@@ -33,15 +33,15 @@ public class PointerInfo
 
     private float maxLifetime = 0.5f;
 
-    private Vector3 mouseMovementDelta = CameraMousePointer.INVALIDINPUT;
+    private Vector3 mouseMovementDelta = MouseInputController.INVALIDINPUT;
 
-    private static Vector3 previousMousepos = CameraMousePointer.INVALIDINPUT;
+    private static Vector3 previousMousepos = MouseInputController.INVALIDINPUT;
 
-    public Vector3 MouseDelta => mouseMovementDelta == CameraMousePointer.INVALIDINPUT ? Vector3.zero : mouseMovementDelta;
+    public Vector3 MouseDelta => mouseMovementDelta == MouseInputController.INVALIDINPUT ? Vector3.zero : mouseMovementDelta;
 
     public PointerInfo(Vector3 origMousePos, RaycastHit newhit)
     {
-        if (previousMousepos == CameraMousePointer.INVALIDINPUT)
+        if (previousMousepos == MouseInputController.INVALIDINPUT)
         {
             previousMousepos = origMousePos;
         }
@@ -62,7 +62,7 @@ public class PointerInfo
     }
     public PointerInfo(ClickEventHandler receiver, Vector3 origMousePos, RaycastHit newhit)
     {
-        if (previousMousepos == CameraMousePointer.INVALIDINPUT)
+        if (previousMousepos == MouseInputController.INVALIDINPUT)
         {
             previousMousepos = origMousePos;
         }

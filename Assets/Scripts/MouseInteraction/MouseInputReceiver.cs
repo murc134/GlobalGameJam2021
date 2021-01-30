@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class CameraMousePointerReceiver : ClickEventHandler
+public class MouseInputReceiver : ClickEventHandler
 {
     public override void HandleDrag(PointerInfo drag, PointerInfo drop)
     {
