@@ -15,8 +15,8 @@ public class IntroAudioQueue : MonoBehaviour
         audioSource[0].PlayScheduled(AudioSettings.dspTime);
         double clipLength = audioSource[0].clip.samples / audioSource[0].clip.frequency;
         audioSource[1].PlayScheduled(AudioSettings.dspTime + clipLength);
+        audioSource[1].loop = true;
 
-        //audioSource = GetComponents<AudioSource>();
-        //audioSource[1].PlayScheduled((double)intro.samples / intro.frequency);
+
     }
 }
