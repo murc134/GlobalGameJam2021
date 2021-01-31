@@ -30,6 +30,11 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 		SpownKeys();
 
 	}
+	// Überscheibe Update, sonst bei lehrtaste dungen weg
+	new void Update()
+	{
+
+	}
 
 	private void CreatEndgamePoint()
 	{
