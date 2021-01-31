@@ -143,10 +143,14 @@ public class Enemy : MonoBehaviour
     private void newIndex()
     {
         destinationIndex = UnityEngine.Random.Range(0, destinationTransform.Length);
+        hasinvoke = false;
     }
+
+    private bool hasinvoke = false;
 
     private void onReachDestination()
     {
+        if(!hasinvoke)
         Invoke("newIndex", UnityEngine.Random.Range(2,8));
         //agent.SetDestination(transform.position);
         //agent.speed = 0;
@@ -192,7 +196,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            if (Vector3.Distance(Destination, transform.position) < 0.2f)
+            if (Vector3.Distance(Destination, transform.position) < 1.0f)
             {
                 onReachDestination();
 
