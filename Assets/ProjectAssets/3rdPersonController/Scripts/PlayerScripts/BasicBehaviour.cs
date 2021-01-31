@@ -102,8 +102,9 @@ public class BasicBehaviour : MonoBehaviour
 		}
 		else
 		{
-			sc.isTrigger = true;
+
 			sc = gameObject.AddComponent<SphereCollider>();
+			sc.isTrigger = true;
 			sc.radius = dangerRadius;
 		}
 
