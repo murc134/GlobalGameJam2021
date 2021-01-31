@@ -33,6 +33,10 @@ MonoBehaviour:
   agent: {fileID: 2408960865277005663}
   animator: {fileID: 3223220934016598455}
   rightHand: {fileID: 3306936952853882453}
+  head: {fileID: 3306936955628712485}
+  obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!195 &2408960865277005663
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -126,6 +130,12 @@ GameObject:
 --- !u!95 &3223220934016598455 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95000013231271488, guid: c72269396f82e214b9e099c930c36173,
+    type: 3}
+  m_PrefabInstance: {fileID: 3308646398381469687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3306936955628712485 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4000012165668306, guid: c72269396f82e214b9e099c930c36173,
     type: 3}
   m_PrefabInstance: {fileID: 3308646398381469687}
   m_PrefabAsset: {fileID: 0}

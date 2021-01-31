@@ -115,7 +115,7 @@ public class MoveBehaviour : GenericBehaviour
 
 		// Set proper speed.
 		Vector2 dir = new Vector2(horizontal, vertical);
-		speed = Vector2.ClampMagnitude(dir, 1f).magnitude;
+		speed = behaviourManager.IsActive ? Vector2.ClampMagnitude(dir, 1f).magnitude : 0;
 		// This is for PC only, gamepads control speed via analog stick.
 		speedSeeker += Input.GetAxis("Mouse ScrollWheel");
 		speedSeeker = Mathf.Clamp(speedSeeker, walkSpeed, runSpeed);

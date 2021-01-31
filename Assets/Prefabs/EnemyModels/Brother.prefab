@@ -55,6 +55,10 @@ MonoBehaviour:
   agent: {fileID: 5317577994966638160}
   animator: {fileID: 5228333269785039461}
   rightHand: {fileID: 9171786335715819929}
+  head: {fileID: 793048417138403044}
+  obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1001 &1865704937831559156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -143,6 +147,12 @@ GameObject:
 --- !u!95 &5228333269785039461 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 50ff8570cc60d8849a909a5b6b380b6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1865704937831559156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &793048417138403044 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7861831855079945968, guid: 50ff8570cc60d8849a909a5b6b380b6c,
     type: 3}
   m_PrefabInstance: {fileID: 1865704937831559156}
   m_PrefabAsset: {fileID: 0}
