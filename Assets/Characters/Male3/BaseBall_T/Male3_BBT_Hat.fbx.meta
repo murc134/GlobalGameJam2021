@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       43: 4300000
     second: Male3_BBallT_Hat
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cap_Head
+    second: {fileID: 2100000, guid: cb9d6eb553a53ad4ca36492761251f04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Male3_BBallT1
+    second: {fileID: 2100000, guid: 13f2cba9e2575ef438aa044f59b4c2a1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

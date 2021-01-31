@@ -26,7 +26,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: SpinningTopMaterial
-    second: {fileID: 2100000, guid: 08111090f18bb9d44983e2df87d71c60, type: 2}
+    second: {fileID: 2100000, guid: 2cc03082a5ed39b48989495e27eca771, type: 2}
   materials:
     materialImportMode: 1
     materialName: 1
@@ -54,7 +54,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 0.001

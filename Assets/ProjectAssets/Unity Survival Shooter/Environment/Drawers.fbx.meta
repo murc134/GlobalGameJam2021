@@ -26,7 +26,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: DrawersMaterial
-    second: {fileID: 2100000, guid: bc20ce0b61f0640438e46bd5f65e42aa, type: 2}
+    second: {fileID: 2100000, guid: 29bbead13699b2d4f8bb36a42f8952a8, type: 2}
   materials:
     materialImportMode: 1
     materialName: 1
@@ -54,7 +54,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 0.001

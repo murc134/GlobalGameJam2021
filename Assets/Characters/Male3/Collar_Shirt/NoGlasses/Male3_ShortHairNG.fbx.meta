@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       43: 4300000
     second: NoGlasses
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 75783bcf801bbc746a6c20096d7834d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head
+    second: {fileID: 2100000, guid: e91f7614d8cf1f04c9e1dc0ec17a20b8, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
