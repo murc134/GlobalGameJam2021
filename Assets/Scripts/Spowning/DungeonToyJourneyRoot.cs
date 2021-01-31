@@ -5,58 +5,26 @@ using System;
 using System.Collections.Generic;
 using TaurusDungeonGenerator.Example.Scripts;
 using UnityEngine;
-using SnowFlakeGamesAssets.TaurusDungeonGenerator;
-using System.Linq;
 
-public enum DungeonLayout { Realistic, BranchingAndOptional, Nesting }
 public class DungeonToyJourneyRoot : DungeonDemoRoot
 {
-
-	public event Action<DungeonStructure> OnToyDungeonRebuilt;
-
-	[Header("Nur Hier Editiren")]
-	[Range(0.0F, 5.0F)]
-	public float Margin;
-	[Range(0.0F, 5.0F)]
-	public float BranchPercent;
-
-	[Range(1, 3)]
-	public uint OptionalEndPoints;
-
-	public DungeonLayout DungeonLayoutFromYamel;
-	
-	[Header("Game Prefaps")]
-	public List<GameObject> Player;
+    public List<GameObject> Player;
 	public GameObject KeyPrefap;
 
 	public DungeonNode EndgameRoom;
 
 	public GameObject EndGameCollaiderObj;
 	public GameObject LookedDoorPrefap;
-
-	DungeonStructure DungeonStruct;
 	/// <summary>
 	/// Keys in DungeonDemoRootstructur.cs gut erklärt
 	/// </summary>
-	//protected Dictionary<string, AbstractDungeonStructure> DungeonStructures => _dungeonStructures;
-	private void Awake()
-	{
-		//OnDungeonRebuilt += TryUnderstandCode_OnDungeonRebuilt;
-		OnToyDungeonRebuilt += SpownPlayer;
+	protected Dictionary<string, AbstractDungeonStructure> DungeonStructures => _dungeonStructures;
 
-	}
 	new void Start()
     {
-
-		//Load Settings aus yaml
-		_dungeonStructures = LoadStructure();
-		var selectedStructure = _dungeonStructures.Keys.ToList()[(int)DungeonLayoutFromYamel];
-		// Build Dungeon
-		BuildDungeon(_dungeonStructures[selectedStructure], seedText?.text?.GetHashCode() ?? 0, BranchPercent, Margin,
-			new PrototypeDungeonGenerator.GenerationParameters
-			{
-				RequiredOptionalEndpointNumber = OptionalEndPoints
-			});
+		//OnDungeonRebuilt += TryUnderstandCode_OnDungeonRebuilt;
+		OnDungeonRebuilt += SpownPlayer;
+		base.Start();
 
 		CreatEndgamePoint();
 		SpownKeys();
@@ -134,23 +102,5 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 		print(node);
 		Instantiate(Player[0], obj.StartElement.Room.transform.position, Quaternion.identity);
 
-	}
-
-	private void BuildDungeon(
-	AbstractDungeonStructure structure,
-	int generationSeed,
-	float branchPercent,
-	float margin,
-	PrototypeDungeonGenerator.GenerationParameters parameters)
-	{
-		if (structure.BranchDataWrapper != null)
-			structure.BranchDataWrapper.BranchPercentage = branchPercent;
-
-		structure.StructureMetaData.MarginUnit = margin;
-
-		var generator = new PrototypeDungeonGenerator(structure, generationSeed, parameters);
-		var prototypeDungeon = generator.BuildPrototype();
-		DungeonStruct = prototypeDungeon.BuildDungeonInUnitySpace(transform);
-		OnToyDungeonRebuilt?.Invoke(DungeonStruct);
 	}
 }

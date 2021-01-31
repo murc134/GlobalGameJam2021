@@ -42,7 +42,7 @@ namespace TaurusDungeonGenerator.Example.Scripts
             ReBuildDungeonFromSeed();
         }
 
-        protected Dictionary<string, AbstractDungeonStructure> LoadStructure()
+        private Dictionary<string, AbstractDungeonStructure> LoadStructure()
         {
 #if SFG_PISCES_CONFIG
             Dictionary<string, AbstractDungeonStructure> result = new Dictionary<string, AbstractDungeonStructure>();

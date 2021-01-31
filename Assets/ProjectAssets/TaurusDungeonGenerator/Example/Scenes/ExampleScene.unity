@@ -1232,6 +1232,7 @@ GameObject:
   - component: {fileID: 492505132}
   - component: {fileID: 492505134}
   - component: {fileID: 492505135}
+  - component: {fileID: 492505136}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -1246,7 +1247,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492505131}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e35845dbc385ee4bb85fb178e90e06a, type: 3}
   m_Name: 
@@ -1300,6 +1301,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fpsText: {fileID: 1869151497}
   hudRefreshRate: 1
+--- !u!114 &492505136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492505131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205aad1f97c402d4dab91c95abc3d21d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: 1755192844
+  seedText: {fileID: 396538179}
+  structureDropdown: {fileID: 431804882}
+  branchSlider: {fileID: 60321062}
+  marginSlider: {fileID: 1610311337}
+  marginText: {fileID: 1585458689}
+  optionalSlider: {fileID: 1207988781}
+  optionalText: {fileID: 602533955}
+  descriptionText: {fileID: 206983823}
+  Player:
+  - {fileID: 9507279839304410, guid: 0a027259e38938743938638e0a9fef35, type: 3}
+  Keys: []
+  EndGameCollaiderObj: {fileID: 0}
 --- !u!1 &518060507
 GameObject:
   m_ObjectHideFlags: 0
