@@ -27,21 +27,25 @@ public class Enemy : MonoBehaviour
     }
 
     [SerializeField]
-    private Transform destinationTransform;
+    private Transform[] destinationTransform;
+
+    public int destinationIndex = 0;
 
     public Vector3 Destination
     {
         get
         {
-            return CanSeePlayer ? playerTransform.transform.position : destinationTransform == null ? transform.position : destinationTransform.position;
+            return CanSeePlayer ? playerTransform.transform.position : destinationTransform == null ? transform.position : destinationTransform[destinationIndex].position;
         }
         set
         {
-            if (destinationTransform == null)
+            if (destinationTransform.Length == 0)
             {
-                destinationTransform = new GameObject($"{transform.name}Destination").transform;
+                destinationTransform = new Transform[1];
+                destinationIndex = 0;
+                destinationTransform[destinationIndex] = new GameObject($"{transform.name}Destination").transform;
             }
-            destinationTransform.position = value;
+            destinationTransform[destinationIndex].position = value;
             //agent.SetDestination(destinationTransform.position);
         }
     }
@@ -113,7 +117,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Destination = destinationTransform.position;
+            Destination = destinationTransform[destinationIndex].position;
         }
 
         if (rightHand == null)
@@ -136,11 +140,17 @@ public class Enemy : MonoBehaviour
         if (Debugging) Debug.Log(curSpeed);
     }
 
+    private void newIndex()
+    {
+        destinationIndex = UnityEngine.Random.Range(0, destinationTransform.Length);
+    }
+
     private void onReachDestination()
     {
-        agent.SetDestination(transform.position);
-        agent.speed = 0;
-        animator.SetFloat("Velocity", 0);
+        Invoke("newIndex", UnityEngine.Random.Range(2,8));
+        //agent.SetDestination(transform.position);
+        //agent.speed = 0;
+        //animator.SetFloat("Velocity", 0);
     }
 
     private void onSetDestination()
