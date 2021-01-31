@@ -59,7 +59,7 @@ Material:
     - _GlowOuter: 0.05
     - _GlowPower: 0.75
     - _GradientScale: 6
-    - _LightAngle: 3.88
+    - _LightAngle: 3.87
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
     - _OutlineSoftness: 0
@@ -75,7 +75,7 @@ Material:
     - _ScaleY: 1
     - _ShaderFlags: 1
     - _Sharpness: 0
-    - _SpecularPower: 1
+    - _SpecularPower: 0.51
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
