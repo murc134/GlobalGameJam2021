@@ -52,9 +52,9 @@ MonoBehaviour:
   m_Active: 1
   renderScale: 1
   sampleCount: 8
-  sampleRange: 1
+  sampleRange: 0.064
   invert: 0
   enableComposit: 1
   colour: {r: 0, g: 0, b: 0, a: 0}
-  multiplier: 2.83
+  multiplier: 8.38
   power: 0.655
