@@ -88,7 +88,7 @@ public class MusicManager : MonoBehaviour
         mainLoopSource.Stop();
         dangerLoopSource.Stop();
 
-        mainLoopSource.clip = menuIntro;
+        mainLoopSource.clip = kinderzimmerLoop;
         dangerLoopSource.clip = dangerLoop;
 
         mainLoopSource.Play();
@@ -133,9 +133,24 @@ public class MusicManager : MonoBehaviour
             {
                 mainLoopSource.Play();
             }
-            if(Player != null)
+            if(Player != null && Player.IsActive)
             {
                 Debug.Log(Player.EnemiesInRadius.Count);
+                float smallesDistance = Player.DangerRadius;
+                foreach(Transform enemy in Player.EnemiesInRadius)
+                {
+                    float dist = Vector3.Distance(enemy.position, Player.transform.position);
+                    if (dist < smallesDistance)
+                    {
+                        smallesDistance = dist;
+                    }
+                }
+
+                DangerIntensity = 1.0f - ( 1.0f / Player.DangerRadius * smallesDistance );
+            }
+            else
+            {
+                DangerIntensity = 0;
             }
         }
 
