@@ -131,6 +131,7 @@ public class Enemy : MonoBehaviour
         carriesPlayer = true;
         playerTransform.transform.parent = rightHand;
         playerTransform.transform.localPosition = Vector3.zero;
+        playerTransform.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
     }
 
     private void putDownPlayer()
