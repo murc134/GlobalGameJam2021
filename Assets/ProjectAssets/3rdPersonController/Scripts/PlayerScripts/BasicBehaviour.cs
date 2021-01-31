@@ -76,6 +76,11 @@ public class BasicBehaviour : MonoBehaviour
 		colExtents = GetComponent<Collider>().bounds.extents;
 	}
 
+	private void Start()
+	{
+		MusicManager.Instance.PlayGameMusic();
+	}
+
 	void Update()
 	{
 		// Store the input axes.
