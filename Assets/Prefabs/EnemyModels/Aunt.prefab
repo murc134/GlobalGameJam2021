@@ -33,6 +33,10 @@ MonoBehaviour:
   agent: {fileID: -4046595932734504977}
   animator: {fileID: 931416069077298462}
   rightHand: {fileID: 931416069085037436}
+  head: {fileID: 931416069085037476}
+  obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!195 &-4046595932734504977
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -131,6 +135,12 @@ Animator:
 --- !u!4 &931416069085037436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400130, guid: 1f078c7471488dc48ab38935b3e2f3e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 931416069084649598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &931416069085037476 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400346, guid: 1f078c7471488dc48ab38935b3e2f3e8,
     type: 3}
   m_PrefabInstance: {fileID: 931416069084649598}
   m_PrefabAsset: {fileID: 0}

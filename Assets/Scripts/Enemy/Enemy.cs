@@ -59,15 +59,28 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private Transform rightHand;
 
+    [SerializeField]
+    private Transform head;
+
     private BasicBehaviour playerTransform;
 
     private bool carriesPlayer = false;
+
+    [SerializeField]
+    private LayerMask obstacleLayerMask;
 
     public bool CanSeePlayer
     {
         get
         {
-            return playerTransform != null;
+            if(playerTransform != null)
+            {
+                return !Physics.Raycast(head.position, playerTransform.transform.position - head.position, Vector3.Distance(head.position, playerTransform.transform.position), obstacleLayerMask);
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 
@@ -100,6 +113,17 @@ public class Enemy : MonoBehaviour
         {
             Destination = destinationTransform.position;
         }
+
+        if (rightHand == null)
+        {
+            Debug.LogError($"{name} is missing a the reference to its right hand", gameObject);
+        }
+
+        if (head == null)
+        {
+            Debug.LogError($"{name} is missing a the reference to its head", gameObject);
+        }
+
     }
 
     // Update is called once per frame
@@ -129,6 +153,11 @@ public class Enemy : MonoBehaviour
         Debug.Log("Pickup Player");
         animator.SetTrigger("Pickup");
         carriesPlayer = true;
+        Invoke("attachPlayerToHand", 1.2f);
+    }
+
+    private void attachPlayerToHand()
+    {
         playerTransform.transform.parent = rightHand;
         playerTransform.transform.localPosition = Vector3.zero;
         playerTransform.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 90));
