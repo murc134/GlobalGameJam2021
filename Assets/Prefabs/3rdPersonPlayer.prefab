@@ -1019,6 +1019,8 @@ MonoBehaviour:
   turnSmoothing: 0.06
   sprintFOV: 70
   sprintButton: Sprint
+  dangerRadius: 120
+  enemiesInDangerRadius: []
 --- !u!114 &6995306879913179969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,7 +1038,7 @@ MonoBehaviour:
   sprintSpeed: 0.7
   speedDampTime: 0.3
   jumpButton: Jump
-  jumpHeight: 0.3
+  jumpHeight: 1
   jumpIntertialForce: 5
 --- !u!114 &6995306879913179968
 MonoBehaviour:
@@ -1086,6 +1088,7 @@ GameObject:
   - component: {fileID: 6995306878864486208}
   - component: {fileID: 6995306878864486223}
   - component: {fileID: 1130642894}
+  - component: {fileID: 99709498}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1210,7 +1213,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1219,6 +1222,23 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &99709498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6995306878864486209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: f7d5379082615c146a85c6e043be2728, type: 2}
 --- !u!1 &7052914574864043118
 GameObject:
   m_ObjectHideFlags: 0
