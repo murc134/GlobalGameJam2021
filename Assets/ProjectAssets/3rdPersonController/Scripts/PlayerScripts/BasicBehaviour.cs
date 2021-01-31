@@ -44,7 +44,20 @@ public class BasicBehaviour : MonoBehaviour
 	// Get current default behaviour.
 	public int GetDefaultBehaviour {  get { return defaultBehaviour; } }
 
-	public bool IsActive = true;
+	private bool isActive = true;
+
+	public bool IsActive
+	{
+		get
+		{
+			return isActive;
+		}
+		set
+		{
+			isActive = value;
+			GetAnim.SetBool("Dead", !isActive);
+		}
+	}
 
 	void Awake ()
 	{
