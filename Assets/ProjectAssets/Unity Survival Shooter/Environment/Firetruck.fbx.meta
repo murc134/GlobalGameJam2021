@@ -26,7 +26,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: FiretruckMaterial
-    second: {fileID: 2100000, guid: 4b72795c9fb71f049924a328e4c7bd6f, type: 2}
+    second: {fileID: 2100000, guid: 19ef75e024e092b4c9dfa97b7b1a4dcc, type: 2}
   materials:
     materialImportMode: 1
     materialName: 1
@@ -54,7 +54,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 0.001

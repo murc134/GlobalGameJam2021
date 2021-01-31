@@ -7,11 +7,13 @@ using TaurusDungeonGenerator.Example.Scripts;
 using UnityEngine;
 using SnowFlakeGamesAssets.TaurusDungeonGenerator;
 using System.Linq;
+using UnityEngine.AI;
 
 public enum DungeonLayout { Realistic, BranchingAndOptional, Nesting }
 public class DungeonToyJourneyRoot : DungeonDemoRoot
 {
-
+	[Header("Nav Mes Generator")]
+	public NavMeshSurface NavMesh; 
 	public event Action<DungeonStructure> OnToyDungeonRebuilt;
 
 	[Header("Nur Hier Editiren")]
@@ -57,6 +59,8 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 			{
 				RequiredOptionalEndpointNumber = OptionalEndPoints
 			});
+
+		NavMesh.BuildNavMesh();
 
 		CreatEndgamePoint();
 		SpownKeys();
