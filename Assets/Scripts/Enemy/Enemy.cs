@@ -177,6 +177,7 @@ public class Enemy : MonoBehaviour
         if(carriesPlayer)
         {
             onReachDestination();
+            GameOverlayCanvas.Instance.GameOver = true;
         }
         else
         {
