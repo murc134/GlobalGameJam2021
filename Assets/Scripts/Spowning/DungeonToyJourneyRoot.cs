@@ -83,12 +83,9 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 				{
 					continue;
 				}
-				if(item.Room.transform.position == Vector3.zero)
-				{
-
-				}
 
 				Instantiate(Player[0], item.Room.transform.position, Quaternion.identity);
+				break;
 			}
 		}
 	}
