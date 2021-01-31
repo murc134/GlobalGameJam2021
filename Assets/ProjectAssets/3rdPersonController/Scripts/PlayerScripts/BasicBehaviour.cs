@@ -29,8 +29,8 @@ public class BasicBehaviour : MonoBehaviour
 	private Vector3 colExtents;                           // Collider extents for ground test. 
 
 	// Get current horizontal and vertical axes.
-	public float GetH { get { return h; } }
-	public float GetV { get { return v; } }
+	public float GetH { get { return IsActive ? h : 0; } }
+	public float GetV { get { return IsActive ? v : 0; } }
 
 	// Get the player camera script.
 	public ThirdPersonOrbitCamBasic GetCamScript { get { return camScript; } }
@@ -43,6 +43,8 @@ public class BasicBehaviour : MonoBehaviour
 
 	// Get current default behaviour.
 	public int GetDefaultBehaviour {  get { return defaultBehaviour; } }
+
+	public bool IsActive = true;
 
 	void Awake ()
 	{
@@ -323,49 +325,5 @@ public class BasicBehaviour : MonoBehaviour
 	{
 		Ray ray = new Ray(this.transform.position + Vector3.up * 2 * colExtents.x, Vector3.down);
 		return Physics.SphereCast(ray, colExtents.x, colExtents.x + 0.2f);
-	}
-}
-
-// This is the base class for all player behaviours, any custom behaviour must inherit from this.
-// Contains references to local components that may differ according to the behaviour itself.
-public abstract class GenericBehaviour : MonoBehaviour
-{
-	//protected Animator anim;                       // Reference to the Animator component.
-	protected int speedFloat;                      // Speed parameter on the Animator.
-	protected BasicBehaviour behaviourManager;     // Reference to the basic behaviour manager.
-	protected int behaviourCode;                   // The code that identifies a behaviour.
-	protected bool canSprint;                      // Boolean to store if the behaviour allows the player to sprint.
-
-	void Awake()
-	{
-		// Set up the references.
-		behaviourManager = GetComponent<BasicBehaviour> ();
-		speedFloat = Animator.StringToHash("Speed");
-		canSprint = true;
-
-		// Set the behaviour code based on the inheriting class.
-		behaviourCode = this.GetType().GetHashCode();
-	}
-
-	// Protected, virtual functions can be overridden by inheriting classes.
-	// The active behaviour will control the player actions with these functions:
-	
-	// The local equivalent for MonoBehaviour's FixedUpdate function.
-	public virtual void LocalFixedUpdate() { }
-	// The local equivalent for MonoBehaviour's LateUpdate function.
-	public virtual void LocalLateUpdate() { }
-	// This function is called when another behaviour overrides the current one.
-	public virtual void OnOverride() { }
-
-	// Get the behaviour code.
-	public int GetBehaviourCode()
-	{
-		return behaviourCode;
-	}
-
-	// Check if the behaviour allows sprinting.
-	public bool AllowSprint()
-	{
-		return canSprint;
 	}
 }

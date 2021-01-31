@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Mirror.Cloud.Examples.Pong;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -31,7 +33,7 @@ public class Enemy : MonoBehaviour
     {
         get
         {
-            return destinationTransform == null ? transform.position : destinationTransform.position;
+            return CanSeePlayer ? playerTransform.transform.position : destinationTransform == null ? transform.position : destinationTransform.position;
         }
         set
         {
@@ -56,6 +58,18 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     private Transform rightHand;
+
+    private BasicBehaviour playerTransform;
+
+    private bool carriesPlayer = false;
+
+    public bool CanSeePlayer
+    {
+        get
+        {
+            return playerTransform != null;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -91,23 +105,115 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(Destination,transform.position) < 0.2f)
+        handleNavigation();
+
+        if (Debugging) Debug.Log(curSpeed);
+    }
+
+    private void onReachDestination()
+    {
+        agent.SetDestination(transform.position);
+        agent.speed = 0;
+        animator.SetFloat("Velocity", 0);
+    }
+
+    private void onSetDestination()
+    {
+        agent.SetDestination(Destination);
+        agent.speed = Speed;
+        animator.SetFloat("Velocity", isRunning ? 1.0f : 0.5f);
+    }
+
+    private void pickupPlayer()
+    {
+        Debug.Log("Pickup Player");
+        animator.SetTrigger("Pickup");
+        carriesPlayer = true;
+        playerTransform.transform.parent = rightHand;
+        playerTransform.transform.localPosition = Vector3.zero;
+    }
+
+    private void putDownPlayer()
+    {
+        Debug.Log("Put down Player");
+        animator.SetTrigger("Pickup");
+        carriesPlayer = false;
+        playerTransform.transform.parent = null;
+        playerTransform.transform.localPosition = Vector3.zero;
+    }
+
+    private void handleNavigation()
+    {
+        if(carriesPlayer)
         {
-            agent.SetDestination(transform.position);
-            agent.speed = 0;
-            animator.SetFloat("Velocity", 0);
+            onReachDestination();
         }
         else
         {
-            agent.SetDestination(Destination);
-            agent.speed = Speed;
-            animator.SetFloat("Velocity", isRunning ? 1.0f : 0.5f);
+            if (Vector3.Distance(Destination, transform.position) < 0.2f)
+            {
+                onReachDestination();
+
+                if (CanSeePlayer)
+                {
+                    pickupPlayer();
+                }
+            }
+            else
+            {
+                onSetDestination();
+            }
         }
 
         Vector3 curMove = transform.position - previousPosition;
         curSpeed = curMove.magnitude / Time.deltaTime;
         previousPosition = transform.position;
+    }
 
-        if (Debugging) Debug.Log(curSpeed);
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.tag == "Player")
+        {
+            Debug.Log($"{name} has spotted Player");
+            BasicBehaviour playerController = other.transform.GetComponent<BasicBehaviour>();
+            if(playerController != null)
+            {
+                playerTransform = playerController;
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.transform.tag == "Player")
+        {
+            Debug.Log($"{name} sees Player => {CanSeePlayer}");
+
+            if(CanSeePlayer)
+            {
+                playerTransform.GetRigidBody.velocity = Vector3.zero;
+                playerTransform.IsActive = false;
+            }
+            else
+            {
+                playerTransform.IsActive = true;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.tag == "Player")
+        {
+            Debug.Log($"{name} does not see Player anymore");
+
+            BasicBehaviour playerController = other.transform.GetComponent<BasicBehaviour>();
+
+            if (playerController == playerTransform)
+            {
+                playerTransform.IsActive = true;
+                playerTransform = null;
+            }
+        }
     }
 }
