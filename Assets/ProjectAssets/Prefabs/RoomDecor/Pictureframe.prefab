@@ -94,6 +94,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   photos:
-  - {fileID: 2800000, guid: 7fc0f9db4ce49e74f95ee866424b0701, type: 3}
+  - {fileID: 2800000, guid: e96f9725f1267a2409c363be6c8ee6a6, type: 3}
   - {fileID: 2800000, guid: 7d4b151f697845b4a844f7a95a776b0b, type: 3}
+  - {fileID: 2800000, guid: 1e8f02904a98c61469a2dfe24a5b2d7b, type: 3}
+  - {fileID: 2800000, guid: 7fc0f9db4ce49e74f95ee866424b0701, type: 3}
+  - {fileID: 2800000, guid: b8195e08e975f1f49a6f502fa6c9b4e1, type: 3}
+  - {fileID: 2800000, guid: 10744695909769744a33e80d274646e9, type: 3}
+  - {fileID: 2800000, guid: 02533a5c32018bd47b6e4aec7bc913ea, type: 3}
+  - {fileID: 2800000, guid: ae37371338deb0c4bb195a00653c2e99, type: 3}
   randomScaleRange: {x: 0.5, y: 2}
