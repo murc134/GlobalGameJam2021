@@ -21,13 +21,40 @@ public class MusicManager : MonoBehaviour
             return instance;
         }
     }
+    [SerializeField]
+    private AudioClip menuIntro;
+    [SerializeField]
+    private AudioClip menuLoop;
+    [SerializeField]
+    private AudioClip mainLoop;
+    [SerializeField]
+    private AudioClip dangerLoop;
+    [SerializeField]
+    private AudioClip kinderzimmerLoop;
+    [SerializeField]
+    private AudioClip LostGameLoop;
 
-    public AudioClip menuIntro, menuLoop, mainLoop, dangerLoop, kinderzimmerLoop, LostGameLoop;
+    [SerializeField]
+    private AudioSource mainLoopSource;
 
-    public AudioSource mainLoopSource;
-    public AudioSource dangerLoopSource;
+    [SerializeField]
+    private AudioSource dangerLoopSource;
+
+    public float DangerIntensity
+    {
+        get
+        {
+            return dangerLoopSource.volume;
+        }
+        set
+        {
+            dangerLoopSource.volume = Mathf.Clamp(value, 0, 1);
+        }
+    }
 
     private bool inGame = false;
+
+    public BasicBehaviour Player;
 
     public void PlayMenuMusic()
     {
@@ -51,6 +78,8 @@ public class MusicManager : MonoBehaviour
         dangerLoopSource.clip = dangerLoop;
 
         mainLoopSource.Play();
+        dangerLoopSource.volume = 0;
+        dangerLoopSource.Play();
     }
 
     public void PlayWinGameMusic()
@@ -77,7 +106,16 @@ public class MusicManager : MonoBehaviour
         mainLoopSource.Play();
     }
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void OnBeforeSceneLoadRuntimeMethod()
+    {
+        Instance.PlayMenuMusic();
+    }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     private void Update()
     {
         if (!inGame)
@@ -95,6 +133,11 @@ public class MusicManager : MonoBehaviour
             {
                 mainLoopSource.Play();
             }
+            if(Player != null)
+            {
+                Debug.Log(Player.EnemiesInRadius.Count);
+            }
         }
+
     }
 }

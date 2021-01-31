@@ -46,6 +46,11 @@ public class BasicBehaviour : MonoBehaviour
 
 	private bool isActive = true;
 
+	[SerializeField]
+	private float dangerRadius = 120;
+
+	public float DangerRadius => dangerRadius;
+
 	public bool IsActive
 	{
 		get
@@ -54,11 +59,19 @@ public class BasicBehaviour : MonoBehaviour
 		}
 		set
 		{
+			if (isActive != value && value == false)
+			{
+				MusicManager.Instance.PlayLooseGameMusic();
+			}
 			isActive = value;
 			GetAnim.SetBool("Dead", !isActive);
 			GameOverlayCanvas.Instance.GameOver = !isActive;
 		}
 	}
+	[SerializeField]
+	private List<Transform> enemiesInDangerRadius = new List<Transform>();
+
+	public List<Transform> EnemiesInRadius => enemiesInDangerRadius;
 
 	void Awake ()
 	{
@@ -79,6 +92,22 @@ public class BasicBehaviour : MonoBehaviour
 	private void Start()
 	{
 		MusicManager.Instance.PlayGameMusic();
+
+		SphereCollider sc = GetComponent<SphereCollider>();
+
+		if(sc != null)
+		{
+			sc.isTrigger = true;
+			dangerRadius = sc.radius;
+		}
+		else
+		{
+			sc.isTrigger = true;
+			sc = gameObject.AddComponent<SphereCollider>();
+			sc.radius = dangerRadius;
+		}
+
+		MusicManager.Instance.Player = this;
 	}
 
 	void Update()
@@ -344,5 +373,21 @@ public class BasicBehaviour : MonoBehaviour
 	{
 		Ray ray = new Ray(this.transform.position + Vector3.up * 2 * colExtents.x, Vector3.down);
 		return Physics.SphereCast(ray, colExtents.x, colExtents.x + 0.2f);
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.transform.tag == "Enemy" && !enemiesInDangerRadius.Contains(other.transform) && !other.isTrigger)
+		{
+			enemiesInDangerRadius.Add(other.transform);
+		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.transform.tag == "Enemy" && enemiesInDangerRadius.Contains(other.transform) && !other.isTrigger)
+		{
+			enemiesInDangerRadius.Remove(other.transform);
+		}
 	}
 }

@@ -13,6 +13,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 6}
   m_Center: {x: 0, y: 1, z: 3}
+--- !u!136 &9191952359588071286
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3308212646211752881}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &-5016753729105651989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,6 +83,10 @@ PrefabInstance:
     - target: {fileID: 1000011396496454, guid: c72269396f82e214b9e099c930c36173, type: 3}
       propertyPath: m_Name
       value: Dad
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011396496454, guid: c72269396f82e214b9e099c930c36173, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4000011334802642, guid: c72269396f82e214b9e099c930c36173, type: 3}
       propertyPath: m_RootOrder

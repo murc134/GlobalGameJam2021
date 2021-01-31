@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Lights
   - Localplayer
+  - Enemy
   layers:
   - Default
   - TransparentFX

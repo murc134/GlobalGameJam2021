@@ -202,7 +202,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.tag == "Player")
+        if(other.transform.tag == "Player" && !other.isTrigger)
         {
             Debug.Log($"{name} has spotted Player");
             BasicBehaviour playerController = other.transform.GetComponent<BasicBehaviour>();
@@ -215,14 +215,15 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "Player" && !other.isTrigger)
         {
             Debug.Log($"{name} sees Player => {CanSeePlayer}");
-
-            if(CanSeePlayer)
+            
+            if (CanSeePlayer)
             {
                 playerTransform.GetRigidBody.velocity = Vector3.zero;
                 playerTransform.IsActive = false;
+                
             }
             else
             {
@@ -233,7 +234,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "Player" && !other.isTrigger)
         {
             Debug.Log($"{name} does not see Player anymore");
 
