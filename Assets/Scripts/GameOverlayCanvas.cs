@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOverlayCanvas : MonoBehaviour
@@ -28,12 +29,18 @@ public class GameOverlayCanvas : MonoBehaviour
     private TextMeshProUGUI gameOverText;
 
     [SerializeField]
+    private TextMeshProUGUI pressAnyKeyText;
+
+    [SerializeField]
     private Image background;
 
     private float alpha = 0;
 
     [SerializeField]
     private float fadeSpeed = 0.25f;
+
+    [SerializeField][Range(0,1)]
+    private float maxAlphaBg = 0.9f;
 
     public float Alpha
     {
@@ -48,7 +55,7 @@ public class GameOverlayCanvas : MonoBehaviour
             gameOverText.alpha = alpha;
 
             Color bgc = background.color;
-            bgc.a = alpha;
+            bgc.a = alpha* maxAlphaBg;
             background.color = bgc;
 
         }
@@ -65,17 +72,53 @@ public class GameOverlayCanvas : MonoBehaviour
 
     public bool GameOver = false;
 
+    private bool pressAnyKeyAlphaUp = true;
+
     // Update is called once per frame
     void Update()
     {
         if(GameOver)
         {
+            if(Input.anyKeyDown)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+
             Alpha += Time.deltaTime * fadeSpeed;
+
+            
+       
+            if(Alpha != 1)
+            {
+                pressAnyKeyText.alpha = Alpha;
+            }
+            else
+            {
+                float pressAnyAlpha = Mathf.Clamp(pressAnyKeyText.alpha + (pressAnyKeyAlphaUp ? Time.deltaTime * fadeSpeed : -Time.deltaTime * fadeSpeed), 0.0f, 1.0f);
+                if (pressAnyKeyAlphaUp)
+                {
+                    if (pressAnyAlpha >= 1)
+                    {
+                        pressAnyKeyAlphaUp = false;
+                    }
+                }
+                else
+                {
+                    if (pressAnyAlpha <= 0)
+                    {
+                        pressAnyKeyAlphaUp = true;
+                    }
+                }
+                pressAnyKeyText.alpha = pressAnyAlpha;
+            }
+
         }
         else
         {
             Alpha -= Time.deltaTime * fadeSpeed;
+            pressAnyKeyText.alpha = 0;
         }
+        
     }
 
     public void Restart()

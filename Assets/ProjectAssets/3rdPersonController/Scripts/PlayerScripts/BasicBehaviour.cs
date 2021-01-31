@@ -56,6 +56,7 @@ public class BasicBehaviour : MonoBehaviour
 		{
 			isActive = value;
 			GetAnim.SetBool("Dead", !isActive);
+			GameOverlayCanvas.Instance.GameOver = !isActive;
 		}
 	}
 

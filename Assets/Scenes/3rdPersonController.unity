@@ -868,7 +868,7 @@ PrefabInstance:
     - target: {fileID: 6995306879913179969, guid: 02b6b9073e958c94dae3b7dd55c88836,
         type: 3}
       propertyPath: runSpeed
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6995306879913179969, guid: 02b6b9073e958c94dae3b7dd55c88836,
         type: 3}
@@ -878,12 +878,17 @@ PrefabInstance:
     - target: {fileID: 6995306879913179969, guid: 02b6b9073e958c94dae3b7dd55c88836,
         type: 3}
       propertyPath: jumpHeight
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6995306879913179969, guid: 02b6b9073e958c94dae3b7dd55c88836,
         type: 3}
       propertyPath: sprintSpeed
-      value: 10
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995306879913179969, guid: 02b6b9073e958c94dae3b7dd55c88836,
+        type: 3}
+      propertyPath: speedDampTime
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6995306879913179975, guid: 02b6b9073e958c94dae3b7dd55c88836,
         type: 3}
