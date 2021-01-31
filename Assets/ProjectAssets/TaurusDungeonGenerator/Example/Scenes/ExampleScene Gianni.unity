@@ -197,6 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492505133}
   - component: {fileID: 492505136}
+  - component: {fileID: 492505132}
   m_Layer: 0
   m_Name: Root
   m_TagString: Player
@@ -204,6 +205,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &492505132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492505131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!4 &492505133
 Transform:
   m_ObjectHideFlags: 0
@@ -230,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205aad1f97c402d4dab91c95abc3d21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 1755192844
+  seed: 5656
   seedText: {fileID: 0}
   structureDropdown: {fileID: 0}
   branchSlider: {fileID: 0}
@@ -239,10 +269,11 @@ MonoBehaviour:
   optionalSlider: {fileID: 0}
   optionalText: {fileID: 0}
   descriptionText: {fileID: 0}
-  Margin: 0.03
-  BranchPercent: 0.09
-  OptionalEndPoints: 1
-  DungeonLayoutFromYamel: 0
+  NavMesh: {fileID: 492505132}
+  Margin: 1.93
+  BranchPercent: 5
+  OptionalEndPoints: 3
+  DungeonLayoutFromYamel: 1
   Player:
   - {fileID: 6995306878168335921, guid: 02b6b9073e958c94dae3b7dd55c88836, type: 3}
   KeyPrefap: {fileID: 8498459802188110894, guid: b1e34bb288503654fa7a271560d63b12,

@@ -19,8 +19,8 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 	[Header("Nur Hier Editiren")]
 	[Range(0.0F, 5.0F)]
 	public float Margin;
-	[Range(0.0F, 5.0F)]
-	public float BranchPercent;
+	[Range(0, 100)]
+	public int BranchPercent;
 
 	[Range(1, 3)]
 	public uint OptionalEndPoints;
@@ -54,7 +54,7 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 		_dungeonStructures = LoadStructure();
 		var selectedStructure = _dungeonStructures.Keys.ToList()[(int)DungeonLayoutFromYamel];
 		// Build Dungeon
-		BuildDungeon(_dungeonStructures[selectedStructure], seedText?.text?.GetHashCode() ?? 0, BranchPercent, Margin,
+		BuildDungeon(_dungeonStructures[selectedStructure], seed, BranchPercent, Margin,
 			new PrototypeDungeonGenerator.GenerationParameters
 			{
 				RequiredOptionalEndpointNumber = OptionalEndPoints
