@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: ad09226371d282b4eb366aec4d1633d2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SceneWithEnemies1.unity
     guid: 1136435ff1dd8e54ca9e028561b1fa55
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: d966bd83108002542b8f09e62d1a871d
   - enabled: 1

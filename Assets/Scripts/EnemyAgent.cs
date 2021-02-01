@@ -46,7 +46,7 @@ public class EnemyAgent : MonoBehaviour
         smoothDeltaPosition = Vector2.Lerp(smoothDeltaPosition, deltaPosition, smooth);
 
         animator.SetFloat("Forward", agent.velocity.magnitude/2f);
-
+        //animator.SetFloat("Turn", agent);
 
         //GetComponent<LookAt>().lookAtTargetPosition = agent.steeringTarget + transform.forward;
 

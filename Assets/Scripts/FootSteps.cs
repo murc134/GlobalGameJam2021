@@ -18,8 +18,6 @@ public class FootSteps : MonoBehaviour
 	void FootStep(float volume = 1f)
 	{
 		audio.PlayOneShot(footSteps[Random.Range(0, footSteps.Length)]);
-		audio.volume = volume;
-
-		Debug.Log("FootStep");
+		//audio.volume = volume;
 	}
 }
