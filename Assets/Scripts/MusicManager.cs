@@ -109,7 +109,7 @@ public class MusicManager : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     static void OnBeforeSceneLoadRuntimeMethod()
     {
-        Instance.PlayMenuMusic();
+        //Instance.PlayMenuMusic();
     }
 
     private void Awake()

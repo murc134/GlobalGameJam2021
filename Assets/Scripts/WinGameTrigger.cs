@@ -9,8 +9,7 @@ public class WinGameTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if(!other.isTrigger && other.tag == "Player")
+        if(!other.isTrigger && other.CompareTag("Player"))
         {
             Debug.Log("Win Player");
             SceneManager.LoadScene(WinGameSceneIndex);

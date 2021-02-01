@@ -36,7 +36,7 @@ MonoBehaviour:
     passOperation: 0
     failOperation: 0
     zFailOperation: 0
-  m_ShadowTransparentReceive: 1
+  m_ShadowTransparentReceive: 0
 --- !u!114 &4543314150008473885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,10 +51,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   renderScale: 1
-  sampleCount: 8
-  sampleRange: 0.064
+  sampleCount: 16
+  sampleRange: 0.06
   invert: 0
   enableComposit: 1
   colour: {r: 0, g: 0, b: 0, a: 0}
-  multiplier: 8.38
-  power: 0.655
+  multiplier: 8
+  power: 0.6
