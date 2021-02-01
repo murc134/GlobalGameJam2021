@@ -62,10 +62,17 @@ public class MusicManager : MonoBehaviour
         mainLoopSource.Stop();
         dangerLoopSource.Stop();
 
-        mainLoopSource.clip = menuIntro;
-        dangerLoopSource.clip = dangerLoop;
+        //mainLoopSource.clip = menuIntro;
+        //dangerLoopSource.clip = dangerLoop;
 
-        mainLoopSource.Play();
+        //mainLoopSource.Play();
+
+        dangerLoopSource.clip = menuIntro;
+        mainLoopSource.clip = menuLoop;
+        dangerLoopSource.PlayScheduled(AudioSettings.dspTime);
+        double clipLength = menuIntro.samples / menuIntro.frequency;
+        mainLoopSource.PlayScheduled(AudioSettings.dspTime + clipLength);
+
     }
 
     public void PlayGameMusic()
@@ -109,7 +116,7 @@ public class MusicManager : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     static void OnBeforeSceneLoadRuntimeMethod()
     {
-        //Instance.PlayMenuMusic();
+        Instance.PlayMenuMusic();
     }
 
     private void Awake()

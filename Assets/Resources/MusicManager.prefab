@@ -53,6 +53,7 @@ MonoBehaviour:
   LostGameLoop: {fileID: 8300000, guid: 35079a080552d6545a91b818480ad3e9, type: 3}
   mainLoopSource: {fileID: -1106782027614088802}
   dangerLoopSource: {fileID: -1971192040359744091}
+  Player: {fileID: 0}
 --- !u!82 &-1106782027614088802
 AudioSource:
   m_ObjectHideFlags: 0
@@ -62,7 +63,8 @@ AudioSource:
   m_GameObject: {fileID: 6503905885766165413}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1468340447559231590, guid: cdb6fd08638a9a143aacca41fc361faa,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -158,7 +160,8 @@ AudioSource:
   m_GameObject: {fileID: 6503905885766165413}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1468340447559231590, guid: cdb6fd08638a9a143aacca41fc361faa,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

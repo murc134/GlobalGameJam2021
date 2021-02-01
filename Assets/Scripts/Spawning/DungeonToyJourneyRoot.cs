@@ -47,9 +47,8 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 		OnToyDungeonRebuilt += SpownPlayer;
 
 	}
-	new void Start()
+	public void Init(int seed)
     {
-
 		//Load Settings aus yaml
 		_dungeonStructures = LoadStructure();
 		var selectedStructure = _dungeonStructures.Keys.ToList()[(int)DungeonLayoutFromYamel];
@@ -64,6 +63,11 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 
 		CreatEndgamePoint();
 		SpownKeys();
+
+	}
+
+	new void Start()
+	{
 
 	}
 	// Überscheibe Update, sonst bei lehrtaste dungen weg

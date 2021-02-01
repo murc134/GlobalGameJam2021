@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderRadius: 200
-  wanderTimer: 25
+  wanderTimer: 20
 --- !u!82 &1550689779
 AudioSource:
   m_ObjectHideFlags: 0
@@ -100,7 +100,7 @@ AudioSource:
   m_GameObject: {fileID: 6674594894515964476}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: cdb6fd08638a9a143aacca41fc361faa,
+  OutputAudioMixerGroup: {fileID: -4613976337536871245, guid: cdb6fd08638a9a143aacca41fc361faa,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0

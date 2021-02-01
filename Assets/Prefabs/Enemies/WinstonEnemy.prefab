@@ -74,7 +74,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.8
-  m_BaseOffset: -0.03
+  m_BaseOffset: -0.05
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &478117169920826381
@@ -100,7 +100,7 @@ AudioSource:
   m_GameObject: {fileID: 459652434530193810}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: cdb6fd08638a9a143aacca41fc361faa,
+  OutputAudioMixerGroup: {fileID: -4613976337536871245, guid: cdb6fd08638a9a143aacca41fc361faa,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -113,7 +113,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.5
-  MaxDistance: 10
+  MaxDistance: 12
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0

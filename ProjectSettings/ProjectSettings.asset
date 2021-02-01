@@ -674,10 +674,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 5177cba4-aa9f-44fd-91a6-27b642bba8df
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Toy Journey
+  organizationId: lucid-binarys
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
