@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class IntroAudioQueue : MonoBehaviour
 {
-    //public AudioClip intro;
-    //public AudioClip mainLoop;
     private AudioSource [] audioSource;
-    
+
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
         audioSource = GetComponents<AudioSource>();
         audioSource[0].PlayScheduled(AudioSettings.dspTime);
         double clipLength = audioSource[0].clip.samples / audioSource[0].clip.frequency;
-        audioSource[1].PlayScheduled(AudioSettings.dspTime + clipLength);
 
-        //audioSource = GetComponents<AudioSource>();
-        //audioSource[1].PlayScheduled((double)intro.samples / intro.frequency);
+        // There is bug that wont loop the scource in WebGL
+        //audioSource[1].PlayScheduled(AudioSettings.dspTime + clipLength);
+
+        yield return new WaitForSeconds(audioSource[1].clip.length);
+        audioSource[1].Play();
     }
 }
