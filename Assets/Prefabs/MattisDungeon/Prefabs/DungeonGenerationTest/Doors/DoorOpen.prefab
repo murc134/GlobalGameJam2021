@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4909126504360282221}
   - component: {fileID: 3456955221162855600}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944253310864912805}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 0.5, z: 0.5}
@@ -58,7 +58,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4875256584312922334}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7525237099949060076}
   - component: {fileID: 5584914690251080925}
   - component: {fileID: 8809312182420028406}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Frame3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 2304230495184831489}
   - component: {fileID: 7054651836649492726}
   - component: {fileID: 6049282481421589106}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Frame1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 9161309633740203644}
   - component: {fileID: 5212717399754554578}
   - component: {fileID: 4821521573239688296}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Frame2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,6 +428,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0ac01095234e1794b86de8b44f804194,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2647898422681595148, guid: 0ac01095234e1794b86de8b44f804194,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -447,6 +452,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 98.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 0ac01095234e1794b86de8b44f804194,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ac01095234e1794b86de8b44f804194, type: 3}

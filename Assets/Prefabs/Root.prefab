@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8230901142854901369}
   - component: {fileID: 8230901142854901348}
   - component: {fileID: 492505132}
+  - component: {fileID: 1033461588}
   m_Layer: 0
   m_Name: Root
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205aad1f97c402d4dab91c95abc3d21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 1755192844
+  seed: 39555
   seedText: {fileID: 0}
   structureDropdown: {fileID: 0}
   branchSlider: {fileID: 0}
@@ -54,12 +55,13 @@ MonoBehaviour:
   optionalText: {fileID: 0}
   descriptionText: {fileID: 0}
   NavMesh: {fileID: 492505132}
-  Margin: 0.02
-  BranchPercent: 0.06
-  OptionalEndPoints: 1
-  DungeonLayoutFromYamel: 0
+  Margin: 0
+  BranchPercent: 100
+  OptionalEndPoints: 3
+  DungeonLayoutFromYamel: 1
   Player:
-  - {fileID: 6995306878168335921, guid: 02b6b9073e958c94dae3b7dd55c88836, type: 3}
+  - {fileID: 7509640586323128665, guid: 411ae24e73a48dc4d8766669f67e92c6, type: 3}
+  - {fileID: 55061877524265501, guid: d33b570072309584ebde00a40e9749df, type: 3}
   KeyPrefap: {fileID: 8498459802188110894, guid: b1e34bb288503654fa7a271560d63b12,
     type: 3}
   EndGameCollaiderObj: {fileID: 2605992626217957530, guid: 3c1accfe0b0395240a51de27bdca78f1,
@@ -79,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
-  m_CollectObjects: 0
+  m_CollectObjects: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
@@ -95,3 +97,15 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1033461588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230901142854901375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ad9d7b9a4c9a747a19f5f3f42e7292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
