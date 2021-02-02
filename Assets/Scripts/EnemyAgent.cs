@@ -14,7 +14,7 @@ public class EnemyAgent : MonoBehaviour
     private float timer;
 
     Vector2 smoothDeltaPosition = Vector2.zero;
-    Vector2 velocity = Vector2.zero;
+    Vector3 velocity = Vector3.zero;
 
     void Start()
     {
@@ -45,8 +45,16 @@ public class EnemyAgent : MonoBehaviour
         float smooth = Mathf.Min(1.0f, Time.deltaTime / 0.15f);
         smoothDeltaPosition = Vector2.Lerp(smoothDeltaPosition, deltaPosition, smooth);
 
+        if (Time.deltaTime > 1e-5f)
+            velocity = smoothDeltaPosition / Time.deltaTime;
+
+        if (velocity.magnitude > 1f) velocity.Normalize();
+        velocity = transform.InverseTransformDirection(velocity);
+        float turnAmount = Mathf.Atan2(velocity.x, velocity.y);
+
         animator.SetFloat("Forward", agent.velocity.magnitude/2f);
-        //animator.SetFloat("Turn", agent);
+        //animator.SetFloat("Forward", agent.velocity.x);
+        //animator.SetFloat("Turn", turnAmount);
 
         //GetComponent<LookAt>().lookAtTargetPosition = agent.steeringTarget + transform.forward;
 
