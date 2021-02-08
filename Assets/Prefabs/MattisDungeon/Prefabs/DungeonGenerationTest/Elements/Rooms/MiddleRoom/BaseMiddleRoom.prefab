@@ -626,7 +626,7 @@ PrefabInstance:
         type: 3}
       propertyPath: openPrefab
       value: 
-      objectReference: {fileID: 944253310864912805, guid: e11dfa8e2fbccdf4784508d52fe4508d,
+      objectReference: {fileID: 944253310864912805, guid: 3b092f048f426984ebd2c6c2e09e780c,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 846c600b96b394f479c9cde459d3aa3f, type: 3}

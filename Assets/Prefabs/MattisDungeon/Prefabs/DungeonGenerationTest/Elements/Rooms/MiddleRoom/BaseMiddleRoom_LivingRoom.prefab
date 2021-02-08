@@ -663,6 +663,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseMiddleRoom_LivingRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 5035514834415332895, guid: 9f44e64fa06b6e1499c592970d417582,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845781644219476926, guid: 9f44e64fa06b6e1499c592970d417582,
+        type: 3}
+      propertyPath: openPrefab
+      value: 
+      objectReference: {fileID: 944253310864912805, guid: 3b092f048f426984ebd2c6c2e09e780c,
+        type: 3}
+    - target: {fileID: 8900439969533321912, guid: 9f44e64fa06b6e1499c592970d417582,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f44e64fa06b6e1499c592970d417582, type: 3}
 --- !u!4 &2151279907031154912 stripped

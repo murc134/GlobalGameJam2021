@@ -60,8 +60,8 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 			});
 
 		NavMesh.BuildNavMesh();
-
-		CreatEndgamePoint();
+		// Auskommentiert weil Closed Door generiert werden im Middel Room 
+		//CreatEndgamePoint();
 		SpownKeys();
 
 	}
@@ -75,7 +75,9 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 	{
 
 	}
-
+	/// <summary>
+	/// 
+	/// </summary>
 	private void CreatEndgamePoint()
 	{
 		Instantiate(EndGameCollaiderObj, EndgameRoom.Room.transform.position, Quaternion.identity);
@@ -85,6 +87,7 @@ public class DungeonToyJourneyRoot : DungeonDemoRoot
 			// Verschliest die offene Türe zum ende mit einem Key
 			if(item.State == RoomConnector.ConnectionState.CONNECTED)
 			{
+				//TODO  Start Room Element vom Dungen Generator ist nicht der Endraum, sondern abhängig von Dungen Größe ein anderer Raum z.b. CorrX
 				var door = Instantiate(LookedDoorPrefap, item.transform.position, item.transform.rotation, EndgameRoom.Room.transform);
 				door.AddComponent<DoorKeyCode>().KeyDoorName = "endkey";
 				item.closedPrefab = door;
