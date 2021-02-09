@@ -692,6 +692,36 @@ Transform:
   m_Father: {fileID: 2000361733387197308}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2849964674664603082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3820571884394158800}
+  m_Layer: 5
+  m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3820571884394158800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2849964674664603082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.433, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5779764617211323927}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2854884731247534798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1639,7 @@ GameObject:
   - component: {fileID: 5833928671608777612}
   - component: {fileID: 1268636966980874604}
   - component: {fileID: 1268636966980874603}
+  - component: {fileID: 8582381870802030875}
   m_Layer: 5
   m_Name: PearlEnemy
   m_TagString: Untagged
@@ -1628,6 +1659,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5054299575865680005}
+  - {fileID: 3820571884394158800}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1802,6 +1834,26 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9babc3079f02ffc4883be99d1e3eb5fd, type: 3}
   - {fileID: 8300000, guid: e829d36a9fc3dc84fa33bb06b31757db, type: 3}
   - {fileID: 8300000, guid: df80c6c0f1b03704fb65b1adf0fac29a, type: 3}
+--- !u!114 &8582381870802030875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5779764617211323923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30654c847ecee594cae1e3a7916204da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DetectionStatus: 0
+  MaximumDistance: 12
+  CloseDistance: 3
+  ViewFieldOffset: 0.8
+  DistanceToPlayer: 0
+  LookScore: 0
+  MainPlayer: {fileID: 0}
+  Head: {fileID: 2849964674664603082}
 --- !u!1 &5857550730068519514
 GameObject:
   m_ObjectHideFlags: 0

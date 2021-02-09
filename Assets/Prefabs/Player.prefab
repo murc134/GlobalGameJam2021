@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7509640584964746392}
   - component: {fileID: 2291293668468593267}
   - component: {fileID: 5056701093323688931}
+  - component: {fileID: 6789818688268348710}
   m_Layer: 0
   m_Name: ThirdPersonController
   m_TagString: Player
@@ -232,6 +233,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c9dd90943a97c7440b428060ef124ac7, type: 3}
   - {fileID: 8300000, guid: 2117963f073791643a51b1f722f9dfc5, type: 3}
   - {fileID: 8300000, guid: cd93329b667f49b4ebadb6e427ec3bc1, type: 3}
+--- !u!114 &6789818688268348710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7509640584953554906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6adcbb1dbb9733846a9de72238803c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7509640585258996431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,7 +1079,7 @@ GameObject:
   - component: {fileID: 7509640586323128664}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

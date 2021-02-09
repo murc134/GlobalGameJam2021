@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &974478137115280210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817448077823532825}
+  m_Layer: 5
+  m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1817448077823532825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974478137115280210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.526, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6674594894515964472}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6674594894515964476
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +44,7 @@ GameObject:
   - component: {fileID: 6657290899803277219}
   - component: {fileID: 1550689779}
   - component: {fileID: 1550689778}
+  - component: {fileID: 3812632513363895758}
   m_Layer: 5
   m_Name: GrannyEnemy
   m_TagString: Untagged
@@ -33,6 +64,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6569157341570050988}
+  - {fileID: 1817448077823532825}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -207,6 +239,26 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9babc3079f02ffc4883be99d1e3eb5fd, type: 3}
   - {fileID: 8300000, guid: e829d36a9fc3dc84fa33bb06b31757db, type: 3}
   - {fileID: 8300000, guid: df80c6c0f1b03704fb65b1adf0fac29a, type: 3}
+--- !u!114 &3812632513363895758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6674594894515964476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30654c847ecee594cae1e3a7916204da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DetectionStatus: 0
+  MaximumDistance: 12
+  CloseDistance: 3
+  ViewFieldOffset: 0.8
+  DistanceToPlayer: 0
+  LookScore: 0
+  MainPlayer: {fileID: 0}
+  Head: {fileID: 974478137115280210}
 --- !u!1001 &6674594894449986631
 PrefabInstance:
   m_ObjectHideFlags: 0

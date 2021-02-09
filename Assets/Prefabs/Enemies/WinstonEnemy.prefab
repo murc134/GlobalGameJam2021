@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 478117169920826381}
   - component: {fileID: 940210050}
   - component: {fileID: 940210049}
+  - component: {fileID: 5744129776098131129}
   m_Layer: 5
   m_Name: WinstonEnemy
   m_TagString: Untagged
@@ -33,6 +34,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 463649250374374849}
+  - {fileID: 8181645321678984942}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -207,6 +209,56 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9babc3079f02ffc4883be99d1e3eb5fd, type: 3}
   - {fileID: 8300000, guid: e829d36a9fc3dc84fa33bb06b31757db, type: 3}
   - {fileID: 8300000, guid: df80c6c0f1b03704fb65b1adf0fac29a, type: 3}
+--- !u!114 &5744129776098131129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459652434530193810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30654c847ecee594cae1e3a7916204da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DetectionStatus: 0
+  MaximumDistance: 12
+  CloseDistance: 3
+  ViewFieldOffset: 0.8
+  DistanceToPlayer: 0
+  LookScore: 0
+  MainPlayer: {fileID: 0}
+  Head: {fileID: 6561505618655881098}
+--- !u!1 &6561505618655881098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8181645321678984942}
+  m_Layer: 5
+  m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8181645321678984942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6561505618655881098}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.859, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 459652434530193814}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &459652435099879699
 PrefabInstance:
   m_ObjectHideFlags: 0
