@@ -9,12 +9,12 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     // Check to see if we're about to be destroyed.
     private static bool m_ShuttingDown = false;
     private static object m_Lock = new object();
-    protected T m_Instance;
+    static protected T m_Instance;
 
     /// <summary>
     /// Access singleton instance through this propriety.
     /// </summary>
-    public T Instance
+    static public T Instance
     {
         get
         {

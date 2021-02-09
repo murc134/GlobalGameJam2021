@@ -3,8 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DetectingLevel { OutOfView, inDistance, close, EyeContact }
-public class PlayerRecognitionTracking : MonoBehaviour
+public enum DetectingLevel 
+{ 
+	OutOfView  = 0,
+	inDistance = 1,
+	close	   = 2,
+	EyeContact = 4
+}
+public class PlayerRecognitionTracking : RegisteredTracker
 {
     public event Action<DetectingLevel> OnDetectingLevelChange;
     public DetectingLevel DetectionStatus = DetectingLevel.OutOfView;
@@ -28,50 +34,57 @@ public class PlayerRecognitionTracking : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        DistanceToPlayer = Vector3.Distance(Head.transform.position, MainPlayer.transform.position);
+	{
+		DistanceToPlayer = Vector3.Distance(Head.transform.position, MainPlayer.transform.position);
 
-        LookScore = GetLookAtScore();
+		LookScore = GetLookAtScore();
 
-        // Check level of Distance
-        DetectingLevel Status;
-        if(DistanceToPlayer < MaximumDistance)
+		// Check level of Distance
+		DetectingLevel Status;
+		if (DistanceToPlayer < MaximumDistance)
 		{
-            if(DistanceToPlayer < CloseDistance)
+			if (DistanceToPlayer < CloseDistance)
 			{
-                Status = DetectingLevel.close;
-            }
+				Status = DetectingLevel.close;
+			}
 			else
 			{
-                Status = DetectingLevel.inDistance;
-            }
+				Status = DetectingLevel.inDistance;
+			}
 
 		}
 		else
 		{
-            Status = DetectingLevel.OutOfView;
-        }
-
-        // Check View direction
-        if (LookScore > 1 - ViewFieldOffset)
-		{
-            if (Physics.Raycast(Head.transform.position , MainPlayer.transform.position - Head.transform.position, out RaycastHit hit, MaximumDistance))
-            {
-                if (hit.collider.tag == "Player")
-                    Status = DetectingLevel.EyeContact;
-            }
-            else
-		    {
-                Status = DetectingLevel.close;
-            }
+			Status = DetectingLevel.OutOfView;
+			CheckStateChange(Status);
+			return;
 		}
 
-        if(Status != DetectionStatus)
+		// Check View direction
+		if (LookScore > 1 - ViewFieldOffset)
 		{
-            DetectionStatus = Status;
-            OnDetectingLevelChange?.Invoke(Status);
-        }
-    }
+			if (Physics.Raycast(Head.transform.position, MainPlayer.transform.position - Head.transform.position, out RaycastHit hit, MaximumDistance))
+			{
+				if (hit.collider.tag == "Player")
+					Status = DetectingLevel.EyeContact;
+			}
+			else
+			{
+				Status = DetectingLevel.close;
+			}
+		}
+
+		CheckStateChange(Status);
+	}
+
+	private void CheckStateChange(DetectingLevel Status)
+	{
+		if (Status != DetectionStatus)
+		{
+			DetectionStatus = Status;
+			OnDetectingLevelChange?.Invoke(Status);
+		}
+	}
 
 
 	/// <summary>
@@ -91,8 +104,7 @@ public class PlayerRecognitionTracking : MonoBehaviour
 
         return Vector3.Dot(lookDirection, playerToObject);
     }
-
-    void OnDrawGizmosSelected()
+	void OnDrawGizmos()
     {
 		switch (DetectionStatus)
 		{
